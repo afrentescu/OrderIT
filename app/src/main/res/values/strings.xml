@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">OrderIt</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="textview">TextView</string>
+    <string-array name="restaurants_names">
+        <item>Caru cu bere </item>
+        <item>Hanul lui Manus</item>
+        <item>Vivo</item>
+        <item>Olivo</item>
+        <item>Capitan</item>
+        <item>Chinesse </item>
+
+
+
+    </string-array>
+</resources>

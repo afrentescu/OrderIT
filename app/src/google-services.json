@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "172694808326",
+    "firebase_url": "https://orderit-1e4a2.firebaseio.com",
+    "project_id": "orderit-1e4a2",
+    "storage_bucket": "orderit-1e4a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172694808326:android:2addc111656d5c10e4e087",
+        "android_client_info": {
+          "package_name": "com.university.orderIT"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172694808326-vj9sjqgte3la4ro0oj1laldpatpeh7mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBuMx6Xhun_PEFueQzN8uGRRfDBsucnnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172694808326-vj9sjqgte3la4ro0oj1laldpatpeh7mh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
