@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bar = getSupportActionBar();
 
-        colorDrawable = new ColorDrawable(Color.parseColor("#DC7C09"));
+        colorDrawable = new ColorDrawable(Color.parseColor("#00995c"));
         bar.setBackgroundDrawable(colorDrawable);
 
 

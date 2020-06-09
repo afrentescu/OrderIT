@@ -8,14 +8,14 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F6BE7B"
+        android:background="#b0e7b0"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="519dp" >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F6BE7B">
+            android:background="#b0e7b0">
 
             <TextView
                 android:id="@+id/tvCategories"
@@ -26,10 +26,10 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:background="#DC7C09"
+                android:background="#FFFFFF"
                 android:gravity="center"
                 android:text="@string/textview"
-                android:textColor="#FFFFFF"
+                android:textColor="#1f651f"
                 android:textSize="75px"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="parent"
