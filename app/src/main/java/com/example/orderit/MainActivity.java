@@ -1,5 +1,6 @@
 package com.example.orderit;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CustomAdapter.OnRestaurantListener {
     ColorDrawable colorDrawable;
     ActionBar bar;
     private DrawerLayout dl ;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         t.syncState();
 
         recycleViesCategories = findViewById(R.id.recycleViewCategories);
-  CustomAdapter customAdapter = new CustomAdapter(this, CATEGORIES, IMAGES);
+  CustomAdapter customAdapter = new CustomAdapter(this, CATEGORIES, IMAGES,  this);
   recycleViesCategories.setAdapter(customAdapter);
   recycleViesCategories.setLayoutManager(new LinearLayoutManager(this));
 
@@ -97,4 +98,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    @Override
+    public void onRestaurantClick(int position) {
+        if(position ==0){
+            Intent intent = new Intent ( getApplicationContext(), DinerActivity.class);
+            startActivity(intent);
+        }
+    }
 }
