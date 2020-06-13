@@ -16,14 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DinerActivity"></activity>
-        <activity android:name=".SteakHouseActivity"></activity>
-        <activity android:name=".CoffeesActivity"></activity>
-        <activity android:name=".DinerAdapter"></activity>
-        <activity android:name=".TeahouseActivity"></activity>
-        <activity android:name=".SushiActivity"></activity>
-        <activity android:name=".PizzaActivity"></activity>
-        <activity android:name=".FastFoodActivity"></activity>
     </application>
 
 </manifest>

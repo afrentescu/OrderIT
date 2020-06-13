@@ -1,6 +1,5 @@
 package com.example.orderit;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -23,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, CustomAdapter.OnRestaurantListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ColorDrawable colorDrawable;
     ActionBar bar;
     private DrawerLayout dl ;
@@ -31,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavigationView nv;
     RecyclerView  recycleViesCategories;
 
-    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi, R.drawable.teahouse,   R.drawable.pizza , R.drawable.caffes, R.drawable.fastfood};
-    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Teahouse","Pizza", "Coffees", "Fast Food"};
+    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi, R.drawable.teahouse,   R.drawable.pizza ,R.drawable.dinnerinthesky, R.drawable.caffes, R.drawable.fastfood, R.drawable.foodtruck};
+    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Teahouse","Pizza","Dinner in the Sky", "Coffees", "Fast Food", "Food truck"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,14 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         t.syncState();
 
         recycleViesCategories = findViewById(R.id.recycleViewCategories);
-  CustomAdapter customAdapter = new CustomAdapter(this, CATEGORIES, IMAGES,this );
+  CustomAdapter customAdapter = new CustomAdapter(this, CATEGORIES, IMAGES);
   recycleViesCategories.setAdapter(customAdapter);
   recycleViesCategories.setLayoutManager(new LinearLayoutManager(this));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
-
 
         nv = (NavigationView)findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -101,11 +97,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    @Override
-    public void onRestaurantClick(int position) {
-  if(position==0){
-      Intent intent = new Intent(getApplicationContext(), DinerActivity.class);
-      startActivity(intent);
-  }
-    }
 }
