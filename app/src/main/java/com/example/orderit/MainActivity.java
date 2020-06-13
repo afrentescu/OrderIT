@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavigationView nv;
     RecyclerView  recycleViesCategories;
 
-    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi, R.drawable.teahouse,   R.drawable.pizza ,R.drawable.dinnerinthesky, R.drawable.caffes, R.drawable.fastfood, R.drawable.foodtruck};
-    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Teahouse","Pizza","Dinner in the Sky", "Coffees", "Fast Food", "Food truck"};
+    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi, R.drawable.teahouse,   R.drawable.pizza , R.drawable.caffes, R.drawable.fastfood};
+    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Teahouse","Pizza", "Coffees", "Fast Food"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
