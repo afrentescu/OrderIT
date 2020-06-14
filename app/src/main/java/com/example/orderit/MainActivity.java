@@ -210,4 +210,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             loadUserProfile(AccessToken.getCurrentAccessToken());
         }
     }
+
 }
