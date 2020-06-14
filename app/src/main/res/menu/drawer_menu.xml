@@ -24,5 +24,13 @@
                 android:title="Share"></item>
         </menu>
     </item>
+
+    <item android:title="Facebook Login">
+        <menu>
+            <item android:id="@+id/nav_facebook"
+                android:icon="@drawable/facebook"
+                android:title="Facebook Login"></item>
+        </menu>
+    </item>
 </menu>
 
