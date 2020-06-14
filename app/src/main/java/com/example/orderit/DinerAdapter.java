@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class DinerAdapter extends RecyclerView.Adapter<DinerAdapter.ViewHolder> {
     TextView tvTable, tvScanQR;
     String restaurantNames[];
@@ -59,4 +61,6 @@ public class DinerAdapter extends RecyclerView.Adapter<DinerAdapter.ViewHolder> 
             tvScanQR.setText("Scan the QR from the menu to order:");
         }
     }
+
+
 }
