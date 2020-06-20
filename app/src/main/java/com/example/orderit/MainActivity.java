@@ -1,9 +1,12 @@
 package com.example.orderit;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +40,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.File;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -85,13 +90,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Toast.makeText(MainActivity.this, "No_smoke",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_restaurant:
                         Toast.makeText(MainActivity.this, "Restaurants",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_share:
-                        Toast.makeText(MainActivity.this, "Share",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_facebook: {
-                       Intent intent = new Intent(getApplicationContext(), SocialLoginActivity.class);
-                       startActivity(intent);
+                        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
+                        startActivity(intent2);
 
                     }
+                  case R.id.nav_share:
+                        {
+                      //  ApplicationInfo api = getApplicationContext().getApplicationInfo();
+                      //  String apkpath = api.sourceDir;
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("application/vnd.android.package-archive");
+                    //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
+                        startActivity(Intent.createChooser(intent, "shareVia"));
+                    }
+
                     default:
                         return true;
                 }
@@ -102,15 +115,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        //Facebook Login
+    }
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation_menu, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+    int id=  item.getGroupId();
+   /* if(id==R.id.nav_share) {
+        ApplicationInfo api = getApplicationContext().getApplicationInfo();
+        String apkpath = api.sourceDir;
+        Intent intent = new Intent( Intent.ACTION_SEND);
+        intent.setType("application/vnd.android.package-archive");
+        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
+        startActivity(Intent.createChooser(intent, "shareVia"));
+    }
+    if(id== R.id.nav_facebook){
+        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
+        startActivity(intent2);
+    }*/
         if(t.onOptionsItemSelected(item))
             return true;
 
@@ -129,8 +156,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
-
-    //Facebook login stuff
-
 
 }
