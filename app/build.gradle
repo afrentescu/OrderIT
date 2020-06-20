@@ -42,5 +42,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'com.google.android.gms:play-services-vision:11.8.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'me.dm7.barcodescanner:zxing:1.9'
 
 }

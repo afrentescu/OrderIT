@@ -1,6 +1,7 @@
 package com.example.orderit;
 
 import android.app.AppComponentFactory;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -27,12 +28,13 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DinerActivity extends AppCompatActivity implements View.OnClickListener {
-  EditText etSearch;
+  TextView tvTable;
     int[]  IMAGES ={ R.drawable.diner2_noeme, R.drawable.diner3_haute, R.drawable.diner4_pio, R.drawable.diner_5_cucinetta, R.drawable.diner_6_kane };
     String[]  NAMES = {"NOEME", "HAUTE", "PIO", "CUCINETTA", "KANE"};
     RecyclerView recycleViesDiner;
     ColorDrawable colorDrawable;
     ActionBar bar;
+    String tableNumber;
     private DrawerLayout dl ;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
@@ -41,6 +43,7 @@ public class DinerActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diner_layout);
         recycleViesDiner = findViewById(R.id.rvDinerRestaurants);
+            tvTable = findViewById(R.id.tvTableBNumber);
 
         bar = getSupportActionBar();
 
@@ -63,8 +66,20 @@ public class DinerActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(DinerActivity.this, "Smoke Free PLaces",Toast.LENGTH_SHORT).show();break;
                     case R.id.nav_restaurant:
                         Toast.makeText(DinerActivity.this, "Restaurants",Toast.LENGTH_SHORT).show();break;
+                    case R.id.nav_facebook: {
+                        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
+                        startActivity(intent2);
+
+                    }
                     case R.id.nav_share:
-                        Toast.makeText(DinerActivity.this, "Share",Toast.LENGTH_SHORT).show();break;
+                    {
+                        //  ApplicationInfo api = getApplicationContext().getApplicationInfo();
+                        //  String apkpath = api.sourceDir;
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("application/vnd.android.package-archive");
+                        //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
+                        startActivity(Intent.createChooser(intent, "shareVia"));
+                    }
                     default:
                         return true;
                 }
@@ -77,7 +92,9 @@ public class DinerActivity extends AppCompatActivity implements View.OnClickList
         DinerAdapter customAdapter = new DinerAdapter(this, NAMES, IMAGES);
         recycleViesDiner.setAdapter(customAdapter);
         recycleViesDiner.setLayoutManager(new LinearLayoutManager(this));
-
+      /*  tableNumber = (String) tvTable.getText();
+        Intent intent = new Intent(getApplicationContext(), Scanner.class);
+        intent.putExtra("TABLENR", tableNumber);*/
     }
 
     @Override

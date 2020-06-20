@@ -7,7 +7,7 @@
     <string name="tvRestaurantTitle">TextView</string>
     <string name="name">Name</string>
     <string name="textview">TextView</string>
-    <string name="scan_qr">Scan QR</string>
+    <string name="scan_qr">Scan BAR CODE</string>
     <string name="todo">TODO</string>
     <string-array name="restaurants_names">
         <item>Caru cu bere </item>
