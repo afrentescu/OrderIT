@@ -16,17 +16,18 @@ public class VideoTutorial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.tutorial_layout);
+        setContentView(R.layout.tutorial_layout);
         bar = getSupportActionBar();
 
         colorDrawable = new ColorDrawable(Color.parseColor("#00995c"));
         bar.setBackgroundDrawable(colorDrawable);
 
-//        VideoView videoView = findViewById(R.id.video_view);
-//        Uri uri = Uri.parse("android.resource://com.example.orderit/res/raw/vid1");
-//        videoView.setVideoURI(uri);
-//        MediaController mediaController = new MediaController(this);
-//        videoView.setMediaController(mediaController);
-//        mediaController.setAnchorView(videoView);
+        VideoView videoView = findViewById(R.id.video_view);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.tutorial1;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
     }
 }
