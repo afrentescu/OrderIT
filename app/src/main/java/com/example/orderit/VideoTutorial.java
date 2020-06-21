@@ -13,7 +13,7 @@ public class VideoTutorial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-   //     setContentView(R.layout.tutorial_layout);
+     setContentView(R.layout.tutorial_layout);
         bar = getSupportActionBar();
 
         colorDrawable = new ColorDrawable(Color.parseColor("#00995c"));

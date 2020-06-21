@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NavigationView nv;
     RecyclerView  recycleViesCategories;
 
-    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi,  R.drawable.pizza , R.drawable.caffes, R.drawable.fastfood};
-    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Pizza", "Coffees", "Fast Food"};
+    int[] IMAGES = { R.drawable.diner, R.drawable.steakhouse,R.drawable.sushi,  R.drawable.pizza , R.drawable.caffes};
+    String[] CATEGORIES = {"Diner", "Steak House", "Sushi", "Pizza", "Coffees"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,33 +84,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch(id)
-                {
-                    case R.id.nav_no_smoke:
-                        Toast.makeText(MainActivity.this, "No_smoke",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_restaurant:
-                        Toast.makeText(MainActivity.this, "Restaurants",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_facebook: {
-                        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
-                        startActivity(intent2);
 
+                    if(id == R.id.nav_no_smoke){
+                        Toast.makeText(MainActivity.this, "No_smoke",Toast.LENGTH_SHORT).show();
                     }
-                  case R.id.nav_share:
-                        {
-                      //  ApplicationInfo api = getApplicationContext().getApplicationInfo();
-                      //  String apkpath = api.sourceDir;
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("application/vnd.android.package-archive");
-                    //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
-                        startActivity(Intent.createChooser(intent, "shareVia"));
-                    }
-                    case R.id.nav_tutorial:
-                        Intent intent3 = new Intent(getApplicationContext(), VideoTutorial.class);
-                        startActivity(intent3);
+                    else
+                   if(id == R.id.nav_restaurant)
+                   {
+                       Intent intent4 = new Intent(getApplicationContext(), RestaurantsActivity.class);
+                       startActivity(intent4);
+                   }
+                   else
+                   if(id == R.id.nav_tutorial){
+                       Intent intent3 = new Intent(getApplicationContext(), VideoTutorial.class);
+                       startActivity(intent3);
+                   }
+                   else
+                   if(id == R.id.nav_facebook)
+                   {
+                       Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
+                       startActivity(intent2);
 
-                    default:
-                        return true;
-                }
+                   }
+                   else
+                      if(id == R.id.nav_share){
+                          Intent intent = new Intent(Intent.ACTION_SEND);
+                          intent.setType("application/vnd.android.package-archive");
+                          //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkp
+                          startActivity(Intent.createChooser(intent, "shareVia"));
+                      }
 
 
                 return true;
@@ -119,28 +121,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.navigation_menu, menu);
         return true;
     }
-
+*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-    int id=  item.getGroupId();
-   /* if(id==R.id.nav_share) {
-        ApplicationInfo api = getApplicationContext().getApplicationInfo();
-        String apkpath = api.sourceDir;
-        Intent intent = new Intent( Intent.ACTION_SEND);
-        intent.setType("application/vnd.android.package-archive");
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
-        startActivity(Intent.createChooser(intent, "shareVia"));
-    }
-    if(id== R.id.nav_facebook){
-        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
-        startActivity(intent2);
-    }*/
+
         if(t.onOptionsItemSelected(item))
             return true;
 

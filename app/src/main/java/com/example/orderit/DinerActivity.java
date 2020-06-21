@@ -60,28 +60,33 @@ public class DinerActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch(id)
+                if(id == R.id.nav_no_smoke){
+                    Toast.makeText(DinerActivity.this, "No_smoke",Toast.LENGTH_SHORT).show();
+                }
+                else
+                if(id == R.id.nav_restaurant)
                 {
-                    case R.id.nav_no_smoke:
-                        Toast.makeText(DinerActivity.this, "Smoke Free PLaces",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_restaurant:
-                        Toast.makeText(DinerActivity.this, "Restaurants",Toast.LENGTH_SHORT).show();break;
-                    case R.id.nav_facebook: {
-                        Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
-                        startActivity(intent2);
+                    Intent intent4 = new Intent(getApplicationContext(), RestaurantsActivity.class);
+                    startActivity(intent4);
+                }
+                else
+                if(id == R.id.nav_tutorial){
+                    Intent intent3 = new Intent(getApplicationContext(), VideoTutorial.class);
+                    startActivity(intent3);
+                }
+                else
+                if(id == R.id.nav_facebook)
+                {
+                    Intent intent2 = new Intent(getApplicationContext(), SocialLoginActivity.class);
+                    startActivity(intent2);
 
-                    }
-                    case R.id.nav_share:
-                    {
-                        //  ApplicationInfo api = getApplicationContext().getApplicationInfo();
-                        //  String apkpath = api.sourceDir;
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("application/vnd.android.package-archive");
-                        //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
-                        startActivity(Intent.createChooser(intent, "shareVia"));
-                    }
-                    default:
-                        return true;
+                }
+                else
+                if(id == R.id.nav_share){
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("application/vnd.android.package-archive");
+                    //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkp
+                    startActivity(Intent.createChooser(intent, "shareVia"));
                 }
 
 
