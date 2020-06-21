@@ -13,6 +13,9 @@
     <item android:id="@+id/nav_no_smoke"
         android:icon="@drawable/ic_smoke_free"
         android:title="Smoke Free Places"></item>
+    <item android:id="@+id/nav_tutorial"
+        android:icon="@drawable/video"
+        android:title="App Tutorial"></item>
 
 
 </group>

@@ -104,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //    intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(apkpath)));
                         startActivity(Intent.createChooser(intent, "shareVia"));
                     }
+                    case R.id.nav_tutorial:
+                        Intent intent3 = new Intent(getApplicationContext(), VideoTutorial.class);
+                        startActivity(intent3);
 
                     default:
                         return true;
