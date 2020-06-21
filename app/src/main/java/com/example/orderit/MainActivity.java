@@ -148,6 +148,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent ( getApplicationContext(), DinerActivity.class);
             startActivity(intent);
         }
+        if(position == 1){
+            Intent intent1 = new Intent(getApplicationContext(), SteakHouseActivity.class);
+            startActivity(intent1);
+        }
+        if(position == 2){
+            Intent intent1 = new Intent(getApplicationContext(), SushiActivity.class);
+            startActivity(intent1);
+        }
+        if(position == 3){
+            Intent intent1 = new Intent(getApplicationContext(), PizzaActivity.class);
+            startActivity(intent1);
+        }
+        if(position == 4){
+            Intent intent1 = new Intent(getApplicationContext(), CoffeesActivity.class);
+            startActivity(intent1);
+        }
     }
 
 }
