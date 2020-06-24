@@ -32,7 +32,7 @@ public class VideoTutorial extends AppCompatActivity {
         bar.setBackgroundDrawable(colorDrawable);
 
         final VideoView videoView = findViewById(R.id.video_view);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.tutorial2;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.tutorialblue;
         final Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
         final MediaController mediaController = new MediaController(this);
